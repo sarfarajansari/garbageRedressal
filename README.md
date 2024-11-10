@@ -1,70 +1,38 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Garbage Redressal System
 
-In the project directory, you can run:
+The **Garbage Redressal System** is an React application that enables people to report waste management issues by submitting photos. Using an image analysis model, the system validates whether the submitted request is genuine and automatically provides the location coordinates if garbage is detected in the images. The system features role-based access for admins and staff to manage and resolve these issues efficiently.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+https://github.com/user-attachments/assets/6533b2f7-19f2-4738-986b-7a2ac28e3e96
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Issue Reporting**: Users can submit reports of waste management issues by uploading images.
+- **Image Verification Model**: The system verifies if an image contains garbage using a machine learning model. Genuine requests are approved with location coordinates.
+- **Admin and Staff Roles**:
+  - **Admin**: Assigns reported issues to staff members, monitors issues on a map, and tracks cleanup progress.
+  - **Staff**: Visits the location, performs cleanup, and uploads post-cleanup images for verification.
+- **Cleanup Verification**: The model checks the new images to confirm if the cleanup was successful and then marks the request as resolved.
+- **Map Interface**: The system displays reported and active issues on a map for easy tracking and management.
 
-### `npm run build`
+## Model Repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The image verification model used in this project can be found in its dedicated repository: [garbageRedressal Model](https://github.com/sarfarajansari/garbageRedressal.Model)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## How It Works
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **User Submission**: A user reports a waste management issue with images and location data.
+2. **Verification**: The model evaluates the images to verify if they genuinely show garbage. If verified, the issue is accepted, and the location is marked on the map.
+3. **Assignment and Cleanup**:
+   - The admin assigns the issue to a staff member.
+   - The staff member visits the location, cleans it, and uploads "after cleanup" images.
+4. **Final Verification**: The model analyzes the new images to verify successful cleanup, then marks the request as resolved.
+5. **Map Interface**: The admin can track all reported issues and their statuses on the interactive map.
 
-### `npm run eject`
+## Conclusion
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This project combines machine learning and location tracking for an efficient waste management solution, enabling real-time reporting, validation, and resolution of garbage issues in public spaces. It provides a structured way for users, admins, and staff to collaborate and keep areas clean.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
